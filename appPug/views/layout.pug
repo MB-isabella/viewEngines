@@ -1,0 +1,37 @@
+doctype html
+html(lang="pt-BR")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Meu Site
+    link(rel="stylesheet", href="/stylesheets/style.css")
+
+  body
+
+    // HEADER
+    header.site-header
+      .container
+        .logo-area
+          img.logo(src="https://cdn.pixabay.com/photo/2022/05/26/00/20/laughing-7221581_1280.png", alt="Logo")
+          h1.site-title MeuSite
+
+        nav.nav
+          ul
+            li
+              a(href="/") Início
+            li
+              a(href="/sobre") Sobre
+            li
+              a(href="/contato") Contato
+
+    // CONTEÚDO DAS PÁGINAS
+    main.main-content
+      block content
+
+    // FOOTER
+    footer.site-footer
+      .container
+        .footer-content
+          p © 2026 MemesLINDOS
+          p Desenvolvido com ódio no coração
+
