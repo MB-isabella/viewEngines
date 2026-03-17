@@ -1,8 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p gostarias de observar memes e obter a gnose? clica aqui:
-  center
-    h3
-      a(href="http://localhost:3000/memes") menu de memes
+  // BANNER NO TOPO
+  .banner-topo
+    img.banner-img(src="https://media.gazetadopovo.com.br/2019/09/04164927/C._Flammarion_-_Universum_-_Paris_1888_-_Colored_Heliocentric_Panorama.jpg", alt="Banner meme")
+
+  .container
+    section.home-hero
+      h1.home-title Boas vindas, aos memes gnósticos e transcendentais
+      p.home-text
+        | gostarias de observar belos memes e obter a gnose? Todo saber espiritual será seu...
+      h3 Clica aqui:
+
+      a.home-button(href="/memes") Menu dos memes

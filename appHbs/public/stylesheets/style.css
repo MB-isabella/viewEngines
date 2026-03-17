@@ -1,8 +1,334 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+/* PALETA 70s TERROSA */
+:root {
+  --marrom-escuro: #3b1f1f;
+  --marrom: #6b3e2e;
+  --vermelho-queimado: #8c2f2f;
+  --terracota: #a14a3f;
+  --bege: #f5e6d3;
+}
+
+/* BODY */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bege);
+  color: var(--marrom-escuro);
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(90deg, var(--marrom), var(--vermelho-queimado));
+  padding: 15px 30px;
+  border-bottom: 3px solid var(--marrom-escuro);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: var(--bege);
+}
+
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--bege);
+  letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--bege);
+  font-weight: 300;
+  transition: 0.3s;
+  position: relative;
+}
+
+/* underline vintage */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--bege);
+  bottom: -4px;
+  left: 0;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* CONTENT */
+.content {
+  padding: 40px;
+  min-height: 80vh;
+}
+
+/* 70s vibe extra */
+.footer p {
+  opacity: 0.8;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* TITULOS */
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  margin-bottom: 30px;
+  color: var(--marrom);
+  font-style: italic;
+}
+
+/* GRID 2x2 */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.card {
+  background-color: var(--terracota);
+  border: 2px solid var(--marrom-escuro);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* efeito vintage hover */
+.card:hover {
+  transform: scale(1.03) rotate(-0.5deg);
+  box-shadow: 6px 6px 0px var(--marrom-escuro);
+}
+
+/* IMAGEM */
+.card img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  filter: sepia(20%) contrast(90%);
+}
+
+/* TITULO DO CARD */
+.card h2 {
+  font-family: 'Playfair Display', serif;
+  padding: 15px;
+  color: var(--bege);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .grid-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER COM POSIÇÃO RELATIVA */
+.footer {
+  position: relative;
+  background-color: var(--marrom-escuro);
+  color: var(--bege);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+/* VINIL */
+.vinyl {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+
+/* DISCO */
+.vinyl-disc {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, #111 40%, #000 60%);
+  border-radius: 50%;
+  position: relative;
+  animation: spin 4s linear infinite;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* RISCOS DO VINIL */
+.vinyl-disc::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.05);
+}
+
+/* CENTRO DO DISCO */
+.vinyl-center {
+  width: 18px;
+  height: 18px;
+  background-color: var(--terracota);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ANIMAÇÃO */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .vinyl-disc {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* LINK DO CARD */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* ARTISTA INTRO */
+.artist-intro {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.artist-text {
+  flex: 1;
+}
+
+.artist-text p {
+  margin-top: 15px;
+  line-height: 1.6;
+  color: var(--marrom);
+}
+
+.artist-image {
+  flex: 1;
+}
+
+.artist-image img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border: 2px solid var(--marrom-escuro);
+  border-radius: 4px;
+}
+
+/* ALBUMS */
+.albums {
+  margin-top: 40px;
+}
+
+.album-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.album-card {
+  background-color: var(--terracota);
+  border: 2px solid var(--marrom-escuro);
+  overflow: hidden;
+  width: calc(25% - 15px); /* 4 cards por linha */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album-card:hover {
+  transform: scale(1.03) rotate(-0.5deg);
+  box-shadow: 6px 6px 0px var(--marrom-escuro);
+}
+
+.album-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  filter: sepia(20%) contrast(90%);
+}
+
+.album-card h3 {
+  font-family: 'Playfair Display', serif;
+  padding: 10px;
+  text-align: center;
+  color: var(--bege);
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+  .album-card {
+    width: calc(50% - 10px); /* 2 cards por linha */
+  }
+}
+
+@media (max-width: 768px) {
+  .artist-intro {
+    flex-direction: column;
+  }
+
+  .album-card {
+    width: 100%; /* 1 card por linha */
+  }
 }

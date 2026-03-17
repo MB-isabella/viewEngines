@@ -144,3 +144,90 @@ body{
   box-shadow:0 10px 20px rgba(0,0,0,0.15);
   background:linear-gradient(135deg,#e6f4ff,#efe6ff);
 }
+
+/* HOME */
+
+.home-hero{
+  text-align:center;
+  padding:60px 20px;
+}
+
+.home-title{
+  font-size:36px;
+  color:#5a4bff;
+  margin-bottom:20px;
+}
+
+.home-text{
+  font-size:18px;
+  margin-bottom:30px;
+  color:#444;
+}
+
+.home-button{
+  display:inline-block;
+  background:linear-gradient(135deg,#6ec6ff,#7608e4);
+  color:white;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 6px 15px rgba(0,0,0,0.15);
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+
+.home-button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* TÍTULO */
+
+.page-title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:30px;
+  color:#5a4bff;
+}
+
+/* CARD SIMPLES */
+
+.card{
+  max-width:800px;
+  margin:0 auto;
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* IMAGEM GRANDE (PAISAGEM) */
+
+.card-img{
+  width:100%;
+  height:500px;
+  object-fit:cover;
+}
+
+/* TEXTO */
+
+.card-title{
+  padding:15px;
+  font-size:20px;
+  text-align:center;
+  color:#444;
+}
+
+/* BANNER TOPO */
+
+.banner-topo{
+  width:100%;
+  overflow:hidden;
+}
+
+.banner-img{
+  width:100%;
+  height: 60%;
+  object-fit:cover;
+  display:block;
+}
